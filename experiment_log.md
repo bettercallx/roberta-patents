@@ -86,3 +86,18 @@ LIMIT
 50000
 ```
 generate v1.csv means only contains claims1 and delete prefix
+
+experiments design
+-
+datasets
+train 
+human:ai:refined = 1000:1000:1000
+validation
+human:ai:refined = 200:200:200
+test
+human:ai:refined = 200:200:200
+
+roberta only read 512 tokens
+1.truncate: only first 512 tokens
+2.truncate: only last 512 tokens
+3.sliding window?
