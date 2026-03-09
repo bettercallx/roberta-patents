@@ -21,6 +21,8 @@ country_code = 'US'
 GROUP BY application_kind
 ORDER BY cnt DESC
 ```
+[patents type](https://www.uspto.gov/patents/basics/apply)
+There are three types of patents: utility, design and plant
 patents application type distribution are
 ```
 SELECT DISTINCT application_kind, COUNT(*) as cnt 
@@ -43,6 +45,8 @@ ORDER BY cnt DESC
 9	J	3
 10 P 2...
 ```
+[kind_code_in_patent](https://www.uspto.gov/learning-and-resources/support-centers/electronic-business-center/kind-codes-included-uspto-patent)
+A means Pre-grant publication, B means No previously published pre-grant publication.
 patents publication type distribution are
 ```
 SELECT 
@@ -70,4 +74,4 @@ ORDER BY cnt DESC
 12	H	2267
 13	I5	2242
 ```
-
+#decide only obtain B2 patents
