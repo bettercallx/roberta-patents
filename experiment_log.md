@@ -12,15 +12,7 @@ DATASETS:
 result is 15108025
 
 ---sql query patents type---
-```
-SELECT DISTINCT application_kind, COUNT(*) as cnt 
-FROM 
-`patents-public-data.patents.publications_201802`
-WHERE 
-country_code = 'US'
-GROUP BY application_kind
-ORDER BY cnt DESC
-```
+
 [patents type](https://www.uspto.gov/patents/basics/apply)
 There are three types of patents: utility, design and plant
 patents application type distribution are
@@ -75,3 +67,22 @@ ORDER BY cnt DESC
 13	I5	2242
 ```
 #decide only obtain B2 patents
+3696530
+```
+SELECT
+publication_number,
+title_localized.text AS title,
+claims_localized.text AS claims
+FROM 
+`patents-public-data.patents.publications_201802`,
+UNNEST(title_localized) AS title_localized,
+UNNEST(claims_localized) AS claims_localized
+WHERE
+country_code = "US"
+AND SPLIT(publication_number, '-')[SAFE_OFFSET(2)] IN ('B1', 'B2')
+AND title_localized.language = 'en'
+AND claims_localized.language = 'en'
+LIMIT
+50000
+```
+generate v1.csv means only contains claims1 and delete prefix
