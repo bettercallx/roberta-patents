@@ -101,3 +101,21 @@ roberta only read 512 tokens
 1.truncate: only first 512 tokens
 2.truncate: only last 512 tokens
 3.sliding window?
+
+3.15-3.25
+
+access genai api, manually clean some compound patents, human dataset describe is 
+```
+count      999.000000
+mean      1082.883884
+std        629.869197
+min        132.000000
+25%        697.500000
+50%        963.000000
+75%       1347.000000
+max      10846.000000
+Name: claim1, dtype: float64
+Filter out the exceptionally long ones
+df = df[df['claim1'].str.len() <= 3000]
+```
+
