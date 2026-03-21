@@ -143,4 +143,18 @@ max      1841.000000
 Name: claim1, dtype: float64
 ```
 512 tokens is about 1200 words, experiment 1 is testing whether roberta classify three types based on length
+So I applied random forest classifier only take length of claims as baseline test, verify if it rely on the length to classify
 
+train_test_split is randomly choose 0.2 as test datasets in 3000
+```
+label
+human           999
+ai_generated    999
+refine          998
+Name: count, dtype: int64
+(2996, 6)
+accuracy only rely on length is : 36.67%
+```
+36.67 is similar random classificaiton, it indicates that length of claims not effects a lot,
+
+Then use roberta model to do the pipeline classification
