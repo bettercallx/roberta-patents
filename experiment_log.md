@@ -118,4 +118,29 @@ Name: claim1, dtype: float64
 Filter out the exceptionally long ones
 df = df[df['claim1'].str.len() <= 3000]
 ```
+ai dataset is
+```
+count     999.000000
+mean      720.272272
+std       299.938932
+min       106.000000
+25%       502.500000
+50%       687.000000
+75%       893.500000
+max      2117.000000
+Name: claim1, dtype: float64
+```
+refine dataset is 
+```
+count     998.000000
+mean      700.666333
+std       293.405266
+min       118.000000
+25%       488.250000
+50%       661.000000
+75%       865.750000
+max      1841.000000
+Name: claim1, dtype: float64
+```
+512 tokens is about 1200 words, experiment 1 is testing whether roberta classify three types based on length
 
