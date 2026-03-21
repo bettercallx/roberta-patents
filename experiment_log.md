@@ -158,3 +158,92 @@ accuracy only rely on length is : 36.67%
 36.67 is similar random classificaiton, it indicates that length of claims not effects a lot,
 
 Then use roberta model to do the pipeline classification
+```
+Epoch 1 Step 0/132 Loss: 1.1028
+  Epoch 1 Step 20/132 Loss: 1.0636
+  Epoch 1 Step 40/132 Loss: 0.9616
+  Epoch 1 Step 60/132 Loss: 0.5021
+  Epoch 1 Step 80/132 Loss: 0.4620
+  Epoch 1 Step 100/132 Loss: 0.6576
+  Epoch 1 Step 120/132 Loss: 0.4874
+
+Epoch 1/4
+  Train Loss: 0.6918
+  Val Loss: 0.4941 | Val Acc: 0.6622
+  Time: 203s
+
+Writing model shards: 100%
+ 1/1 [00:02<00:00,  2.09s/it]
+  Saved best model (val_acc: 0.6622)
+
+  Epoch 2 Step 0/132 Loss: 0.5358
+  Epoch 2 Step 20/132 Loss: 0.4250
+  Epoch 2 Step 40/132 Loss: 0.6862
+  Epoch 2 Step 60/132 Loss: 0.4640
+  Epoch 2 Step 80/132 Loss: 0.6300
+  Epoch 2 Step 100/132 Loss: 0.4931
+  Epoch 2 Step 120/132 Loss: 0.4730
+
+Epoch 2/4
+  Train Loss: 0.4749
+  Val Loss: 0.4232 | Val Acc: 0.7622
+  Time: 224s
+
+Writing model shards: 100%
+ 1/1 [00:01<00:00,  1.95s/it]
+  Saved best model (val_acc: 0.7622)
+
+  Epoch 3 Step 0/132 Loss: 0.3946
+  Epoch 3 Step 20/132 Loss: 0.3684
+  Epoch 3 Step 40/132 Loss: 0.5084
+  Epoch 3 Step 60/132 Loss: 0.1311
+  Epoch 3 Step 80/132 Loss: 0.1310
+  Epoch 3 Step 100/132 Loss: 0.3463
+  Epoch 3 Step 120/132 Loss: 0.2108
+
+Epoch 3/4
+  Train Loss: 0.3147
+  Val Loss: 0.2468 | Val Acc: 0.9044
+  Time: 228s
+
+Writing model shards: 100%
+ 1/1 [00:01<00:00,  1.90s/it]
+  Saved best model (val_acc: 0.9044)
+
+  Epoch 4 Step 0/132 Loss: 0.2740
+  Epoch 4 Step 20/132 Loss: 0.1658
+  Epoch 4 Step 40/132 Loss: 0.3522
+  Epoch 4 Step 60/132 Loss: 0.1588
+  Epoch 4 Step 80/132 Loss: 0.3549
+  Epoch 4 Step 100/132 Loss: 0.0849
+  Epoch 4 Step 120/132 Loss: 0.3665
+
+Epoch 4/4
+  Train Loss: 0.2026
+  Val Loss: 0.2423 | Val Acc: 0.9089
+  Time: 228s
+
+Writing model shards: 100%
+ 1/1 [00:01<00:00,  1.98s/it]
+  Saved best model (val_acc: 0.9089)
+
+Loading weights: 100%
+ 201/201 [00:00<00:00, 515.81it/s, Materializing param=roberta.encoder.layer.11.output.dense.weight]
+Test Accuracy: 0.9103
+
+Classification Report:
+              precision    recall  f1-score   support
+
+       human       1.00      1.00      1.00       149
+ai_generated       0.86      0.88      0.87       149
+      refine       0.88      0.85      0.86       148
+
+    accuracy                           0.91       446
+   macro avg       0.91      0.91      0.91       446
+weighted avg       0.91      0.91      0.91       446
+
+Confusion Matrix:
+[[149   0   0]
+ [  0 131  18]
+ [  0  22 126]]
+```
