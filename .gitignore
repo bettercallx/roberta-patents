@@ -1,1 +1,2 @@
 *.safetensors
+*.general_patent/results/finetuned/best_model/.DS_Store
